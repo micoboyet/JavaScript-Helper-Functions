@@ -6,10 +6,12 @@ Easy to use Confirm Modal library properly created in Jquery and Bootstrap
 - bootstrap.css (for rendering bootstrap modal UI)
 
 # Methods
+<pre>
 .init(modalSize) - (Optional) Initialize the modal size. Values are 'sm' , 'md(by default)', 'lg'
 .show(modalTitle, modalContent) - Show modal with customize title and content
 .show(modalTitle, modalContent, customButtons) - Show modal with customize title and content and Button with Events
 .hide() - Hide modal
+</pre>
 
 # Usage
 
