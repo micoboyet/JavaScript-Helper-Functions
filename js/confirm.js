@@ -16,18 +16,20 @@ var Confirm = {
 	},
 	customEvent : null,
 
-	init : function(size)
+	init : function(modalSize)
 	{
 		var self = this;
 		var ElemHtml = '';
 
+		modalSize = 'md';
+
 		$(self.modalMainId).remove();
 
 		ElemHtml = '<div id="confirm-modal" class="modal fade role="dialog" tabindex="-1">'
-				 +     '<div class="modal-dialog modal-'+ size +'">'
+				 +     '<div class="modal-dialog modal-'+ modalSize +'">'
 				 +		 '<div class="modal-content">'
 				 +				'<div class="modal-header">'
-				 +					'<button id="modal-upper-close" class="close modal-close" aria-label="Close" type="button">'
+				 +					'<button id="modal-upper-close" class="close modal-close" aria-label="Close" type="button" title="Close">'
 				 +						'<span aria-hidden="true">×</span>'
 				 +					'</button>'
 				 +					'<h4 id="modal-title" class="modal-title">Modal Title</h4>'
@@ -52,8 +54,11 @@ var Confirm = {
 
 		closeButton =  '';
 
-		if(self.customButton)
-			closeButton =  '<button id="modal-close" type="button" class="btn btn-default modal-custom-button">Close</button>';
+		if(typeof self.customButton != 'undefined')
+		{
+			if(Object.keys(self.customButton).length == 1)
+				closeButton =  '<button id="modal-close" type="button" class="btn btn-default btn-xs modal-custom-button">Close</button>';
+		}
 		else
 		{
 			self.customButton = {
@@ -84,8 +89,8 @@ var Confirm = {
 				ButtonState = 'btn-danger';
 
 			ElemHtml = closeButton
-					 + '<button id="button-'+ buttonName.toLowerCase() +'" type="button" class="btn modal-custom-button '+ ButtonState +'">'+ buttonName +'</button>';
-			
+					 + '<button id="button-'+ buttonName.toLowerCase() +'" type="button" class="btn btn-xs modal-custom-button '+ ButtonState +'">'+ buttonName +'</button>';
+					
 			$('#modal-footer').append(ElemHtml);
 
 			if($('#modal-close'))
