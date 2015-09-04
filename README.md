@@ -3,8 +3,9 @@
 Easy to use Confirm Modal created using JQuery and Bootstrap. Put events in every custom buttons on your web application.
 
 # Requirements
-  - jquery.js (for functionality of button events)
-  - bootstrap.css (for rendering bootstrap modal UI)
+This snippet uses a number of open source projects to work properly:
+* [Twitter Bootstrap] - great UI boilerplate for modern web apps
+* [jQuery] - for javascript events
     
 # Methods
 ```sh
@@ -18,7 +19,8 @@ Easy to use Confirm Modal created using JQuery and Bootstrap. Put events in ever
 Include the dependencies
 ```sh
 <link rel="stylesheet" type="text/css" href="bootstrap.css"/>
-<script type="text/javascript" src="jquery-1.1.0.js"></script>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="confirm.js"></script>
 ```
 Show Modal
 ```sh
@@ -62,12 +64,6 @@ Confirm.show('Message', 'Do you want to save the changes?', {
 
 ### Version
 1.0.0
-
-### Tech
-
-This snippet uses a number of open source projects to work properly:
-* [Twitter Bootstrap] - great UI boilerplate for modern web apps
-* [jQuery] - for javascript events
 
 ### Todos
 
