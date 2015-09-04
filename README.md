@@ -10,9 +10,10 @@ This snippet uses a number of open source projects to work properly:
 # Methods
 ```sh
  .init(modalSize) - (Optional) Initialize the modal size. 
- .show(modalTitle, modalContent) - Show modal with customize title and content
- .show(modalTitle, modalContent, customButtons) - Adds custom button events
- .hide() - Hide modal
+ .show(modalTitle, modalContent) - Show modal with customize title and content.
+ .show(modalTitle, modalContent, customButtons) - Adds custom button events.
+ .hide() - Hide the modal.
+ .size() - Change the modal size.
 ```
 
 # Usage
@@ -30,6 +31,14 @@ Hide Modal
 ```sh
 Confirm.hide();
 ```
+
+ReSize Modal
+```sh
+Confirm.size('sm'); //Change modal size to small
+Confirm.size('md'); //Change modal size to medium
+Confirm.size('lg'); //Change modal size to large
+```
+
 Custom Button Events 
 ```sh
 Confirm.show('Message', 'Please login to continue browsing.', {
