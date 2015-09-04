@@ -16,7 +16,7 @@ var Confirm = {
 	},
 	customEvent : null,
 
-	init : function(modalSize)
+	init : function()
 	{
 		var self = this;
 		var ElemHtml = '';
@@ -24,8 +24,9 @@ var Confirm = {
 		modalSize = 'md';
 
 		$(self.modalMainId).remove();
+		$(self.modalBackgroundId).remove();
 
-		ElemHtml = '<div id="confirm-modal" class="modal fade role="dialog" tabindex="-1">'
+		ElemHtml = '<div id="confirm-modal" class="modal fade" role="dialog" tabindex="-1">'
 				 +     '<div class="modal-dialog modal-'+ modalSize +'">'
 				 +		 '<div class="modal-content">'
 				 +				'<div class="modal-header">'
@@ -144,6 +145,15 @@ var Confirm = {
 			'display' : 'block',
 			'padding-right' : '17px'
 		});
+
+		if(modalSize)
+		{
+			if(modalSize == 'sm' || modalSize == 'md' || modalSize == 'lg')
+			{
+				$('#confirm-modal .modal-dialog').removeClass('modal-md').addClass('modal' + modalSize);
+			}
+		}
+
 		self.addCustomButtons();
 	},
 
@@ -155,10 +165,24 @@ var Confirm = {
 		$(self.modalBackgroundId).removeClass('modal-backdrop fade in');
 
 		$(self.modalMainId).css('display', 'none');
+	},
+
+	size : function(modalSize)
+	{
+		if(modalSize)
+		{
+			if(modalSize == 'sm' || modalSize == 'lg')
+				modalSize = modalSize;
+		}
+		else
+			modalSize = 'md';
+
+		$('#confirm-modal .modal-dialog').removeClass('modal-sm').removeClass('modal-md').removeClass('modal-lg');
+		$('#confirm-modal .modal-dialog').addClass('modal-' + modalSize);
 	}
 };
 
-$(document).ready(function()
+$(function()
 {
 	Confirm.init();
 });
