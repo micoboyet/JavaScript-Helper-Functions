@@ -1,6 +1,6 @@
-# JavaScript Helper Function
+# helper.js
 
-A compact javascript library for commonly used functions in web development.
+A javascript library for commonly used functions in web development. Easy to implement, save time.
 
 # Requirements
 This snippet uses a number of open source projects to work properly:
@@ -9,15 +9,22 @@ This snippet uses a number of open source projects to work properly:
     
 # Methods
 ```sh
-
+Helper.validate.email(string) - Validates Email : Returns boolean
+Helper.validate.date(string)  - Validates Date : Returns booean
+Helper.generate.randomString(length)  - Generates a random string : Returns : String
+Helper.textbox.bindNumbers(elementId) - binds input text to accept numbers characters only 
+Helper.textbox.bindNumbers(elementId, arrExclusion) - Adds some characters to accept plus the numbers
+Helper.textbox.bindLetters(elementId) - binds input text to accept letters chracters only
+Helper.textbox.bindLetters(elementId, arrExclusion) - Adds some characters to accept plus the letters
+Helper.utils.removeWhiteSpaces(string) - strips whitespaces
 ```
-
+ 
 ### Version
 1.0.0
 
 ### Todos
 
- - Thinking on how to make it more reusable
+ - To be continue
  
 License
 ----
