@@ -1,6 +1,6 @@
-# Dynamic Confirm Modal
+# JavaScript Helper Function
 
-Easy to use Confirm Modal created using JQuery and Bootstrap. Put events in every custom buttons on your web application.
+A compact javascript library for commonly used functions in web development.
 
 # Requirements
 This snippet uses a number of open source projects to work properly:
@@ -9,66 +9,7 @@ This snippet uses a number of open source projects to work properly:
     
 # Methods
 ```sh
- .init(modalSize) - (Optional) Initialize the modal size. 
- .show(modalTitle, modalContent) - Show modal with customize title and content.
- .show(modalTitle, modalContent, customButtons) - Adds custom button events.
- .hide() - Hide the modal.
- .size() - Change the modal size.
-```
 
-# Usage
-Include the dependencies
-```sh
-<link rel="stylesheet" type="text/css" href="bootstrap.css"/>
-<script type="text/javascript" src="jquery.js"></script>
-<script type="text/javascript" src="confirm.js"></script>
-```
-Show Modal
-```sh
-Confirm.show('Message', 'Do you want to delete the selected row?');
-```
-Hide Modal
-```sh
-Confirm.hide();
-```
-
-ReSize Modal
-```sh
-Confirm.size('sm'); //Change modal size to small
-Confirm.size('md'); //Change modal size to medium
-Confirm.size('lg'); //Change modal size to large
-```
-
-Custom Button Events 
-```sh
-Confirm.show('Message', 'Please login to continue browsing.', {
-    'Okay' :  {
-        'primary' : true, //If you want to put color on your primary button
-        'callback' : function() { //If you want to put callback function
-            //Put your callback codes here
-            Confirm.hide(); //Hides the Modal after executing the callback
-        }
-    }
-});
-```
-
-Multiple Button Events
-```sh
-Confirm.show('Message', 'Do you want to save the changes?', {
-    'Save' :  {
-        'primary' : true, 
-        'callback' : function() { 
-            //Put your callback codes here
-            Confirm.hide();
-        },
-    },
-    'Cancel' : {
-        'primary' : false,
-        'callback': function() {
-              Confirm.hide();
-        }
-    }
-});
 ```
 
 ### Version

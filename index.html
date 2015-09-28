@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+  <head><title>Helper JS</title>
+  	<link rel="stylesheet" href="css/bootstrap.min.css">
+  	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
+  	<script type="text/javascript" src="js/helper.js"></script>
+  </head>
+  <body>
+  	<div class="container">
+
+  		<h1>Helper</h1>
+  		<p>
+  			A commonly used functions that all developers already knows. With this library, it is now easier for 
+  			the developers to implement things on the go using a short code.
+  		</p>
+
+  		<div class="panel panel-default container">
+
+  			<h2>Validation</h2>
+			<p>
+				It is used to validate input of the user. <br/>
+				Usage : <code>Helper.validate.email(string)</code> <br/>
+				Return : <code>boolean</code>
+			</p>
+  			<div class="panel panel-default">
+  				<div class="panel-body">
+		  			<div class="form-inline">
+			  			<div class="form-group">
+			  				<label>Email</label><br/>
+					  		<input id="email-txt" type="text" value="github.micoboyet@yahoo.com">
+					  		<button id="validate-email-btn">Submit</button>
+					  	</div>
+
+			  			<div class="form-group">
+			  				<label>Date</label><br/>
+					  		<input id="date-txt" type="text" value="2015-09-28">
+					  		<button id="validate-date-btn">Submit</button>
+					  	</div>
+
+					  	<br/><br/>
+
+			            <div class="alert alert-success">
+			                <strong>Result : </strong><span id="validate-result"></span>
+			            </div>
+				  	</div>
+				</div>
+		  	</div>
+
+  			<h2>Generation</h2>
+			<p>
+				Some sort of string / object to generate<br/>
+				Usage : <code>Helper.generate.randomString(length)</code> <br/>
+				Return : <code>string</code>
+			</p>
+  			<div class="panel panel-default">
+  				<div class="panel-body">
+		  			<div class="form-inline">
+			  			<div class="form-group">
+			  				<label>Random String</label><br/>
+					  		<input id="random-string-txt" type="text" value="20">
+					  		<button id="generate-random-btn">Submit</button>
+					  	</div>
+
+					  	<br/><br/>
+
+			            <div class="alert alert-info">
+			                <strong>Result : </strong><span id="generate-result"></span>
+			            </div>
+		  			</div>
+		  		</div>
+		  	</div>
+
+  			<h2>Utilities</h2>
+			<p>
+				Extra functions goes here<br/>
+				Usage : <code>Helper.utils.removeWhiteSpaces(string)</code> <br/>
+				Return : <code>string</code>
+			</p>
+  			<div class="panel panel-default">
+  				<div class="panel-body">
+		  			<div class="form-inline">
+			  			<div class="form-group">
+			  				<label>Remove White Spaces</label><br/>
+					  		<input id="remove-spaces-txt" type="text" value="github . com / mico boyet">
+					  		<button id="remove-spaces-btn">Submit</button>
+					  	</div>
+
+					  	<br/><br/>
+
+			            <div class="alert alert-warning">
+			                <strong>Result : </strong><span id="utilities-result"></span>
+			            </div>
+					</div>
+				</div>
+			</div>
+
+  			<h4>Textbox Events</h4>
+			<p>
+				For adding events to limit the input characters<br/><br/>
+				Usage : <code>Helper.textbox.bindNumbers(elementId)</code> <br/>
+				Implements : Numbers Characters
+			</p>
+  			<div class="panel panel-default">
+  				<div class="panel-body">
+		  			<div class="form-inline">
+			  			<div class="form-group">
+			  				<label>Textbox Numbers Only</label><br/>
+					  		<input id="bind-number-txt" type="text" value="12345">
+					  	</div>
+					</div><br/>
+					<div class="form-inline">
+			  			<div class="form-group">
+			  				<label>Textbox Numbers with Character Exclusion (backspace, -)</label><br/>
+					  		<input id="bind-number-exclusion-txt" type="text" value="4-7000">
+					  	</div>
+					</div><br/>
+				</div>
+			</div>
+
+			<p>
+				For adding events to limit the input characters<br/>
+				Usage : <code>Helper.textbox.bindLetter(elementId)</code> <br/>
+				Implements : Letter Characters
+			</p>
+			<div class="panel panel-default">
+				<div class="panel-body">
+					<div class="form-inline">
+			  			<div class="form-group">
+			  				<label>Textbox Letters Only</label><br/>
+					  		<input id="bind-letter-txt" type="text" value="github">
+					  	</div>
+					</div><br/>
+					<div class="form-inline">
+			  			<div class="form-group">
+			  				<label>Textbox Letters with Character Exclusion (backspace, -)</label><br/>
+					  		<input id="bind-letter-exclusion-txt" type="text" value="git-hub">
+					  	</div>
+					</div>
+				</div>
+			</div>
+			<br/>
+  		</div>
+  	</div>
+  	<script type="text/javascript">
+  		$(function(){
+  			$('#validate-email-btn').unbind();
+  			$('#validate-email-btn').bind('click', function(e)
+  			{
+  				e.preventDefault();
+
+  				result = Helper.validate.email($('#email-txt').val());
+  				$('#validate-result').html(result);
+  			});
+
+  			$('#validate-date-btn').unbind();
+  			$('#validate-date-btn').bind('click', function(e)
+  			{
+  				e.preventDefault();
+
+  				result = Helper.validate.date($('#date-txt').val());
+  				$('#validate-result').html(result);
+  			});
+
+  			$('#generate-random-btn').unbind();
+  			$('#generate-random-btn').bind('click', function(e)
+  			{
+  				e.preventDefault();
+
+  				result = Helper.generate.randomString($('#random-string-txt').val());
+  				$('#generate-result').html(result);
+  			});
+
+  			$('#remove-spaces-btn').unbind();
+  			$('#remove-spaces-btn').bind('click', function(e)
+  			{
+  				e.preventDefault();
+
+  				result = Helper.utils.removeWhiteSpaces($('#remove-spaces-txt').val());
+  				$('#utilities-result').html(result);
+  			});
+
+  			Helper.textbox.bindNumbers('#bind-number-txt');
+  			Helper.textbox.bindNumbers('#bind-number-exclusion-txt', [173, 8]);
+
+  			Helper.textbox.bindLetters('#bind-letter-txt');
+  			Helper.textbox.bindLetters('#bind-letter-exclusion-txt', [173, 8]);
+  		});
+  	</script>
+  </body>
+</html>
