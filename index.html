@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html>
-  <head><title>Helper JS</title>
+  <head><title>Helper JS - Mico Blance</title>
   	<link rel="stylesheet" href="css/bootstrap.min.css">
   	<script type="text/javascript" src="js/jquery-1.11.3.js"></script>
   	<script type="text/javascript" src="js/helper.js"></script>
@@ -8,10 +8,12 @@
   <body>
   	<div class="container">
 
-  		<h1>Helper</h1>
+  		<h1>Helper JS</h1>
   		<p>
   			A commonly used functions that all developers already knows. With this library, it is now easier for 
   			the developers to implement things on the go using a short code.
+  			<br/>
+  			For beginners, you may use this library for learning purposes or web development projects.
   		</p>
 
   		<div class="panel panel-default container">
@@ -72,7 +74,7 @@
 
   			<h2>Utilities</h2>
 			<p>
-				Extra functions goes here<br/>
+				Remove white spaces all over the string<br/>
 				Usage : <code>Helper.utils.removeWhiteSpaces(string)</code> <br/>
 				Return : <code>string</code>
 			</p>
@@ -88,7 +90,30 @@
 					  	<br/><br/>
 
 			            <div class="alert alert-warning">
-			                <strong>Result : </strong><span id="utilities-result"></span>
+			                <strong>Result : </strong><span id="remove-spaces-result"></span>
+			            </div>
+					</div>
+				</div>
+			</div>
+
+			<p>
+				Capitalize all of the first letter on every word<br/>
+				Usage : <code>Helper.utils.capitalize(string)</code> <br/>
+				Return : <code>string</code>
+			</p>
+  			<div class="panel panel-default">
+  				<div class="panel-body">
+		  			<div class="form-inline">
+			  			<div class="form-group">
+			  				<label>Capitalize</label><br/>
+					  		<input id="capitalize-txt" type="text" value="hello world">
+					  		<button id="capitalize-btn">Submit</button>
+					  	</div>
+
+					  	<br/><br/>
+
+			            <div class="alert alert-warning">
+			                <strong>Result : </strong><span id="capitalize-result"></span>
 			            </div>
 					</div>
 				</div>
@@ -149,7 +174,7 @@
   				e.preventDefault();
 
   				result = Helper.validate.email($('#email-txt').val());
-  				$('#validate-result').html(result);
+  				$('#validate-result').html(result.toString());
   			});
 
   			$('#validate-date-btn').unbind();
@@ -158,7 +183,7 @@
   				e.preventDefault();
 
   				result = Helper.validate.date($('#date-txt').val());
-  				$('#validate-result').html(result);
+  				$('#validate-result').html(result.toString());
   			});
 
   			$('#generate-random-btn').unbind();
@@ -176,7 +201,16 @@
   				e.preventDefault();
 
   				result = Helper.utils.removeWhiteSpaces($('#remove-spaces-txt').val());
-  				$('#utilities-result').html(result);
+  				$('#remove-spaces-result').html(result);
+  			});
+
+  			$('#capitalize-btn').unbind();
+  			$('#capitalize-btn').bind('click', function(e)
+  			{
+  				e.preventDefault();
+
+  				result = Helper.utils.capitalize($('#capitalize-txt').val());
+  				$('#capitalize-result').html(result);
   			});
 
   			Helper.textbox.bindNumbers('#bind-number-txt');
