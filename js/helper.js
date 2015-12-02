@@ -113,6 +113,25 @@ var Helper =
 		removeWhiteSpaces : function(string)
 		{
 			return string.replace(/\s/g, '');
+		},
+		
+		capitalize : function(string)
+		{
+	            var finalString = '';
+	            var arrWords = string.split(' ');
+	            var arrPieces = [];
+	
+	            if(arrWords.length == 1)
+	                finalString = string.charAt(0).toUpperCase() + string.slice(1);
+	            else
+	            {
+	                for(var i=0; i<arrWords.length; i++)
+	                    arrPieces.push(arrWords[i].charAt(0).toUpperCase() + arrWords[i].slice(1));
+	
+	                finalString = arrPieces.join(' ');
+	            }
+	
+	            return finalString;
 		}
 	}
 };
