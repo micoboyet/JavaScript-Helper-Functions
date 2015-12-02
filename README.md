@@ -17,7 +17,7 @@ Helper.textbox.bindNumbers(elementId, arrExclusion) - Adds some characters to ac
 Helper.textbox.bindLetters(elementId) - binds input text to accept letters chracters only
 Helper.textbox.bindLetters(elementId, arrExclusion) - Adds some characters to accept plus the letters
 Helper.utils.removeWhiteSpaces(string) - strips whitespaces
-Helpter.utils.capitalize(string) - Capitalize first letters on every words of the string
+Helpter.utils.capitalize(string) - Capitalize first letter on every words of the string
 ```
  
 ### Version
