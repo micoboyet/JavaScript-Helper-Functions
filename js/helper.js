@@ -8,15 +8,50 @@ var Helper =
 			return Helper.emailRegExp.test(string);
 		},
 
-		date : function(string)
+		date : function(date)
 		{
-			retval = new Date(string);
-			if(retval.getDate())
-				retval = true;
-			else
-				retval = false;
-
-			return retval;
+	            var retval = false;
+	
+	            var isValid = false;
+	            var dateReg = null;
+	            var datePieces = null;
+	            var separator = null;
+	            var slashSeparator = new RegExp('/');
+	            var dashSeparator  = new RegExp('-');
+	
+	            if(slashSeparator.test(date))
+	            {
+	                dateReg = new RegExp('((19|20)[0-9]{2})/([0-9][1-2])/([0-2][0-9]|[3][0-1])$');
+	                datePieces = date.split('/');
+	                separator = '/';
+	                isValid = true;
+	            }
+	
+	            if(dashSeparator.test(date))
+	            {
+	                dateReg = new RegExp('((19|20)[0-9]{2})-([0-9][1-2])-([0-2][0-9]|[3][0-1])$');
+	                datePieces = date.split('-');
+	                separator = '-';
+	                isValid = true;
+	            }
+	
+	            if(isValid)
+	            {
+	                var tMonth = parseInt(datePieces[1]);
+	                var tDay = parseInt(datePieces[2]);
+	
+	                if(tMonth < 10)
+	                    tMonth = '0' + tMonth;
+	                if(tDay < 10)
+	                    tDay = '0' + tDay;
+	
+	                date = datePieces[0] + separator + tMonth + separator + tDay;
+	
+	                if(dateReg.test(date))
+	                    retval = true;
+	            }
+	
+	            return retval;
 		}
 	},
 
