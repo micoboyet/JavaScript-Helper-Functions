@@ -21,7 +21,7 @@ var Helper =
 	
 	            if(slashSeparator.test(date))
 	            {
-	                dateReg = new RegExp('((19|20)[0-9]{2})/([0-9][1-2])/([0-2][0-9]|[3][0-1])$');
+	                dateReg = new RegExp('((19|20)[0-9]{2})/(([0][1-9]|[1-2][0-2]))/([0-2][0-9]|[3][0-1])$');
 	                datePieces = date.split('/');
 	                separator = '/';
 	                isValid = true;
@@ -29,7 +29,7 @@ var Helper =
 	
 	            if(dashSeparator.test(date))
 	            {
-	                dateReg = new RegExp('((19|20)[0-9]{2})-([0-9][1-2])-([0-2][0-9]|[3][0-1])$');
+	                dateReg = new RegExp('((19|20)[0-9]{2})-(([0][1-9]|[1-2][0-2]))-([0-2][0-9]|[3][0-1])$');
 	                datePieces = date.split('-');
 	                separator = '-';
 	                isValid = true;
